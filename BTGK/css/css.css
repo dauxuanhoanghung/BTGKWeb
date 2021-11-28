@@ -1,0 +1,573 @@
+* {
+  margin: 0; padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Roboto", "sans-serif";
+  color: #fff;
+}
+a, a:hover {
+  text-decoration: none;
+  color: #fff;
+}
+ul li {
+  list-style-type: none;
+}
+/**/
+.ring-phone {
+  position: fixed;
+  bottom: 40px;
+  left: 35px;
+  z-index: 1000;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.phone {
+  width: 60px;
+  height: 60px;
+  background-color: #0f75bc;
+  border-radius: 50%;
+}
+.phone a {
+  text-decoration: none;
+  color: #fff;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 50px;
+  height: 50px;
+  z-index: 100;
+  animation: shakePhone 1s infinite ease-in;
+}
+.phone a i {
+  font-size: 2.4rem;
+  position: absolute;
+  color: #fff;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.circle-small {
+  width: 75px;
+  height: 75px;
+  border-radius: 100%;
+  background-color: #0fe978;
+  z-index: 10;
+  position: absolute;
+  right: -12%;
+  bottom: -12%;
+  animation: zoomOut 1.5s infinite ease-in;
+}
+.circle-large {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 2px solid #0fe9ff;
+  position: absolute;
+  color: transparent;
+  left: -25%;
+  bottom: -25%;
+  z-index: 9;
+  animation: zoomOut 1.5s infinite ease-in;
+}
+.ring-ring-phone:hover .circle-small, .phone, .circle-large{
+    background-color: #a8c906;
+}
+@keyframes zoomOut {
+  0% {
+    transform: scale(0.5);
+    opacity: 0.3;
+  }
+  30% {
+    transform: scale(0.8);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(1.3);
+    opacity: 0.3;
+  }
+}
+@keyframes shakePhone {
+  0% {
+    transform: rotate(0);
+  }
+  20% {
+    transform: rotate(-35deg);
+  }
+  40% {
+    transform: rotate(35deg);
+  }
+  60% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+.bttop {
+  position: fixed;
+  bottom: 35px;
+  right: 35px;
+  background-color:#000;
+  z-index: 10;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  opacity: 0.6;
+  cursor: pointer;
+  display: none;
+}
+.bttop i {
+  color: #fff;
+  font-size: 1.6rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.bttop:hover {
+  background-color: #360f8a;
+}
+/*Carousel*/
+#myCarousel img {
+  width: 100%;
+  height: 400px;
+}
+/**/
+.bgc {
+  background-color: rgb(159, 206, 206, 0.3);
+}
+.category {
+  width: 15%;
+  margin: 15px auto;
+}
+div.category .category-wrap {
+  width: 90%;
+  margin-left: auto;
+  margin-top: 20px;
+}
+div.category a {
+  background-color: #bdbdbd;
+  color: #000;
+  display: block;
+  width: 100%;
+  flex-direction:row;
+  padding: 2px 0;
+  border-top: 1px solid #000;
+  margin-right: auto;
+}
+div.category a:active {
+  opacity: 0.8;
+}
+div.category .title {
+  text-align: center;
+  background-color: #0fe9ff;
+  color: #fff;
+  font-size: 1.5rem;
+  border-radius: 8px 8px 0 0;
+  margin-bottom: 0;
+  border-bottom: 1px solid #000;
+}
+div.category .title div {
+  background-color: #bdbdbd;
+  color: #000;
+}
+.section-wrapper {
+  width: 85%;
+  margin: 0;
+}
+section {
+  margin: 0 0 20px;
+}
+div#clock {
+  font-size: 1.3rem;
+  background-image: url(../images/fire.gif);
+  width: 40%;
+  height: 100%;
+  margin: 0 auto;
+}
+div#clock p {
+  display: inline-block;
+  background-color: aliceblue;
+  width: 3rem;
+  text-align: center;
+  margin: 5px 0;
+  border-radius: 3px;
+  opacity: 0.7;
+  transform: translateX(250%);
+}
+div.products {
+  margin-top: 35px;
+}
+div.products h1,
+div.products h2,
+div.products h3,
+div.products h4,
+div.products h5,
+div.products h6,
+div.products a,
+div.products figure,
+div.products p{
+  margin-bottom: 0;
+}
+div.title {
+  margin: 4px;
+}
+div.title > h3 {
+  text-align: center;
+  text-shadow: #FC0 1px 0 10px;
+  box-shadow: 0 2px 4px 0 rgba(158, 158, 158, 0), 0 2px 15px 0 rgba(0, 0, 0, 0.06);;
+}
+div.title > h3::after {
+  content: "-----OwOwO-----";
+  display: block;
+  text-align: center;
+}
+div.title h4 {
+  text-align: center;
+  margin: 0 auto;
+  width: 60%;
+  display: inline-block;
+  color: red;
+}
+div.container {
+  color: #000;
+}
+ul.products {
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+ul.products a {
+  display: block;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+ul.products li {
+  position:relative;
+  width: calc(22% - 10px);
+  margin: 0 auto 20px;
+  border-radius: 5px;
+  border: 2px solid #a8c906;
+}
+ul.products li:hover {
+  box-shadow: 3px 3px 20px 1px rgb(0, 0, 0, 0.1);
+}
+ul.products li .product-image{
+  display: block;
+  position: relative;
+}
+ul.products li:hover .product-image img {
+  transform: scale(1.1);
+  transition: 0.5s all ease;
+}
+ul.products li .product-image > a {
+  display: block;
+  overflow: hidden;
+  height: 180px;
+  background-color: #fff;
+}
+ul.products li .product-image img {
+  min-height: 165px;
+  max-height: 180px;
+  display: block;
+  padding: 0 5px;
+  background-color: #fff;
+  margin: auto auto;
+  border-radius: 4px;
+  width: 100%;
+}
+ul.products li figcaption {
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+  background: rgb(2, 45, 76, 0.6);
+  width: 100%;
+  position: absolute;
+  bottom: -24px;
+  transition: 0.5s all ease;
+  z-index: -10;
+  opacity: 0;
+}
+ul.products li:hover .product-image figcaption {
+  transform: translateY(-24px);
+  z-index: 900;
+  opacity: 1;
+}
+ul.products .product-info {
+  background: rgb(0, 128, 240, 0.9);
+}
+.product-name {
+  color: #fff;
+  text-align: center;
+  font-size: 20px;
+}
+.price {
+  background-color: #a8c906;
+  position: relative;
+}
+.sale-product .sale-product-price{
+  color: #000;
+  text-decoration: line-through;
+  padding-left: 5px;
+}
+.product-price {
+  color: #f00;
+  background-color: #a8c906;
+}
+i.sale {
+  position: absolute;
+  background-color: #ff0000;
+  color: #fff;
+  padding-top: 6px;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 50%;
+  width: 20%;
+  height: 20%;
+  z-index: 90;
+  font-weight: bold;
+  transform: translate(-50%, -50%);
+  margin: auto 0;
+}
+.title-text h3,
+.sub-title {
+  color: #5b3236;
+  font-size: 2.4rem;
+  margin: 0;
+  line-height: 2.5rem;
+  font-weight: 500;
+  text-align: center;
+}
+.title-text h3::before {
+  content: "---oWo---";
+  text-shadow: 3px 0 10px 3px;
+  display: block;
+}
+/**/
+.home-news {
+  padding: 40px 10px;
+}
+.body-news {
+  background-color: #353535;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+section#news {
+  margin-bottom: 0;
+}
+.news-img img {
+  width: 100%;
+  min-height: 240px;
+  max-height: 288px;
+  border-radius: 10px 10px 0 0;
+}
+.body-news:hover .heading-news > h3 {
+  color: #45ff75;
+}
+.body-news:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 1px 20px 0 rgb(0, 0, 0, 0.1);
+}
+.heading-news {
+  text-decoration: none;
+  margin: 0;
+  color: #85ff10;
+}
+.heading-news h3 {
+  color: #45ff75;
+  padding: 10px 2px 0;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin: 0;
+  overflow: hidden;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+h4.heading-news {
+  color: #45ff75;;
+  font-size: 1.5rem;
+  overflow: hidden;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+.news-detail {
+  margin: 0;
+  padding: 0 10px;
+  font-size: 1rem;
+  overflow: hidden;
+  font-weight: 400;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  word-break: break-word;
+}
+.news-wrap {
+  padding-bottom: 15px;
+}
+.comments {
+  padding-top: 3px;
+}
+.comments a {
+  padding-left: 10px;
+  font-size: 1.7rem;
+  text-decoration: none;
+  color: var(--primary-color);
+}
+.leftFadeIn {
+  animation: leftFadeIn .75s ease;
+}
+.rightFadeIn {
+  animation: rightFadeIn .75s ease;
+}
+.article .col {
+  position: relative;
+}
+@keyframes leftFadeIn {
+  from {
+    left: -100%;
+  }
+  to {
+    left: 0;
+  }
+}
+@keyframes rightFadeIn {
+  from {
+    left: 200%;
+  }
+  to {
+    left: 0;
+  }
+}
+/**/
+.content_news {
+  padding: 40px 0;
+}
+.content_news a {
+  color: #353535 !important;
+}
+.content_news .title1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+div.attachment {
+  background: url(../images/background-cong-nghe.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  width: 100%;
+  height: 400px;
+  position: relative;
+}
+div.attachment h1 {
+  font-size: 5rem;
+  color: #30ff30;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.content_news .image {
+  width: 60%;
+  float: left;
+  padding: 0 5px;
+}
+.hot-news h4.heading-news {
+  font-size: 2rem;
+}
+.content_news .right .news {
+  height: 50%;
+  border-left: 0;
+}
+.content_news .images2 {
+  width: 240px;
+  float: left;
+  margin-right: 10px;
+}
+.content_news .right {
+width: 155%;
+}
+.content_news div.new-header {
+  margin: 30px 0 20px 0;
+  position: relative;
+}
+.content_news h1.new {
+  display: inline-block;
+  background-color: rgb(26, 148, 255);
+  font-size: 2rem;
+  padding: 20px;
+  border-radius: 10px 10px 0 0;
+}
+.content_news h1.new::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  bottom: 0;
+  left: 0;
+  background: rgb(26, 148, 255);
+}
+.content_news div.news-content {
+  margin: 20px 0;
+  border-bottom: 2px solid #a7a7a7;
+  height: 175px;
+}
+.content_news img.images {
+  height: 140px;
+  width: 220px;
+  float: left;
+  padding: 0 10px;
+}
+.content_news .news-content:hover {
+  color: #288ad6; 
+}
+.left-news, .right-news {
+  margin: 0 10px;
+  width: 50%;
+}
+.left-news {
+  border-right: 0.5px solid #818181;
+}
+.right-child {
+  padding: 10px 0;
+}
+.hot-news h6.news-detail {
+  clear: both;
+}
+.special {
+  -webkit-line-clamp: 10;
+  padding: 3px 0;
+  font-size: 1.4rem;
+}
+.views {
+  font-size: 1rem;
+  margin: 0;
+  padding: 5px;
+}
+.content_news .home-news{
+  margin: 0;
+  padding: 0 0;
+}
+.content_news a:hover img {
+  animation: roll360 2s 0.3s 1;
+}
+.content_news img {
+  margin: 5px;
+}
+@keyframes roll360 {
+  0% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
