@@ -252,7 +252,7 @@ ul.products li {
   border: 2px solid #a8c906;
 }
 ul.products li:hover {
-  box-shadow: 3px 3px 20px 1px rgb(0, 0, 0, 0.1);
+  box-shadow: 3px 3px 20px 1px rgb(0, 0, 0, 0.3);
 }
 ul.products li .product-image{
   display: block;
@@ -570,4 +570,332 @@ width: 155%;
   100% {
     transform: rotate(0);
   }
+}
+div.containerItem {
+  width: 90%;
+  margin: 0 auto;
+  padding: 15px 0;
+}
+div.containerItem > .flex > div {
+  margin: 0 10px;
+}
+div.item {
+  width: 50%;
+}
+div.item .imgMain img {
+  max-width: 470px;
+  display: block;
+  margin: 0 auto;
+  padding: 10px 0;
+}
+div.item .imgMain img.v2 {
+  max-width: none;
+}
+div.item img {
+  width: 100%;
+}
+div.item img:hover {
+  cursor: pointer;
+}
+div.thumb.flex {
+  justify-content: space-between;
+  margin: 5px 0;
+}
+div.thumb > div {
+  width: calc(25% - 10px);
+  transition: all 0.5s ease-in-out;
+}
+div.thumb div.active {
+  border:1px solid red;
+  transform: scale(1.1);
+}
+.itemDetail {
+  background-color: rgba(16, 183, 255, 0.1);
+  border-radius: 10px;
+  width: 50%;
+  color: #353535;
+}
+.attribute-list {
+  float: left;
+  width: 100%;
+  position: relative;
+  display: inline;
+}
+.attribute-title {
+  padding-left: 0 !important;
+  width: 20%;
+  padding: 0 7px;
+  float: left;
+}
+.attribute-list p {
+  padding: 10px 0;
+  margin: 0;
+  font-size: 1.3rem;
+}
+.attribute-list p.priceItem {
+  font-size: 1.6rem;
+  color: #ff0000;
+  font-weight: bold;
+  letter-spacing: 0;
+}
+.attribute-item {
+  border: 2px solid rgba(0,0,0,.09);
+  padding: 10px 13px;
+  white-space: nowrap;
+  cursor: pointer;
+  text-transform: uppercase;
+  color: #353535;
+  font-weight: 800;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  float: left;
+}
+.attribute-item.active {
+  border-color: red;
+}
+
+.quantity-selection {
+  display: inline-flex;
+}
+.quantity-selection input {
+  width: 50px;
+  border: none;
+  border-radius: 7px;
+  margin: 0 5px;
+  outline: none;
+}
+.quantity-selection button {
+  width: 35px;
+  border: none;
+  border-radius: 10px;
+  line-height: 2.5rem;
+  font-size: 2rem;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.buy-box {
+  margin: 10px auto;
+  display: block;
+}
+.product-price-box .buy-box .add-to-cart {
+  float: left;
+}
+.product-price-box .buy-box a {
+  width: 49%;
+  margin-top: 0px;
+  cursor: pointer;
+  height: 50px;
+}
+.buy-box .add-to-cart {
+  background-color: #5d83db;
+}
+.buy-box .add-to-cart, .buy-box .buy-now {
+  margin: 15px 10px;
+  box-shadow: 2px 4px #888888;
+  border-radius: 15px;
+  width: 45%;
+  display: inline-flex;
+  align-items: center;
+  padding-top: 10px !important;
+  padding-bottom: 15px !important;
+  justify-content: center;
+}
+.product-price-box .buy-box a {
+  width: 49%;
+  margin-top: 0px;
+  cursor: pointer;
+  height: 50px;
+}
+.buy-box .buy-now {
+    background-color: #fa9d4d
+}
+/**/
+.containerItem .content_news {
+  padding: 0;
+}
+.comments-area {
+  position: relative;
+}
+.comments-area textarea {
+  width: 100%;
+  padding: 4px 8px;
+  margin: 0 auto;
+  height: 100px;
+  min-height: 80px;
+  max-height: 120px;
+  border: 1px solid #778;
+  border-radius: 15px;
+  outline: none;
+}
+button.post-comment {
+  width: 10%;
+  height: 30px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 1.5px 1.2px #000;
+  outline: none;
+  background-color: #0fe9ff;
+  position: absolute;
+  right: 8px;
+  bottom: 12px;
+  display: block;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.comment {
+  font-size: 1.3rem;
+  border-radius: 20px;
+  font-weight: 400;
+  color: #000;
+  padding: 0 0 4px 12px;
+  border-bottom: 0.3px solid #454545;
+  margin-bottom: 8px;
+  display: block;
+  position: relative;
+}
+div:-webkit-scrollbar {
+  width: 10px;
+}
+div::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 5px;
+}
+div:-webkit-scrollbar-thumb {
+  background-color: #353535;
+  border-radius: 5px;
+}
+div::-webkit-scrollbar-button{
+  display: none;
+}
+.postArea {
+  border-radius: 15px;
+  width: 100%;
+  height: 200px;
+  overflow-y: scroll;
+  background-color: #fff;
+  display: none;
+}
+.date {
+  position: absolute;
+  right: 12px;
+}
+.map.flex {
+  margin: 20px auto 0;
+  width: 90%;
+}
+#map {
+  width: 48%;
+  padding-right: 2%;
+}
+#map iframe {
+  width: 100%;
+  min-height: 300px;
+  max-height: 350px;
+}
+.map .map-info {
+  font-size: 1.5rem;
+  color: #252525;
+  font-weight: 600;
+}
+
+/**/
+div.table-wrap{
+  width: 90%;
+  margin: 0 auto;
+}
+table.table {
+  width: 100%;
+  border-radius: 10px;
+  border: 2px solid #000;
+}
+table.table thead td:first-child, table.table tfoot td:first-child, table.table tbody td:first-child {
+  width: 50%;
+}
+table.table thead {
+  background-color: rgba(16, 183, 255, 0.5);
+  font-size: 1.2rem;
+  text-align: center;
+}
+table.table tbody {
+  text-align: center;
+  color: #000;
+  border-bottom: 1.2px solid #454545;
+}
+table.table tbody td:first-child {
+  text-align: left;
+}
+table.table tfoot {
+  text-align: center;
+  color: #000;
+}
+table.table button {
+  background-color: #45ff45;
+  border: none;
+  outline: none;
+  width: 80%;
+  box-shadow: 2px 3px rgba(30,255,20,0.3);
+  border-radius: 4px;
+  padding: 3px;
+}
+input.address {
+  width: 90%;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  box-shadow: 2px 2px #242424;
+  padding: 12px 4px 12px 20px;
+  margin: 40px auto 0;
+  display: block;
+}
+div button.order {
+  padding: 10px;
+  margin: 3px 0 20px 5%;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  background-color: #0fe9ff;
+  color: #000;
+  box-shadow: 2px 2px rgba(16, 183, 255, 0.5);
+}
+div.v2 table.table {
+  margin-bottom: 0;
+  padding-bottom: 10px;
+}
+div.thanks {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 100;
+  transform: translate(-50%, -50%);
+  background-color: rgba(15, 230,255, 0.7);
+  color: #000;
+  width: 40%;
+  margin: 0 auto;
+  transition: all 0.5s ease;
+  display: none;
+}
+@keyframes scale {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+div.thanks h1 {
+  padding: 0 20px;
+  text-align: center;
+  text-transform: uppercase;
+}
+div.thanks a{
+  display: block;
+  font-size: 1.2rem;
+  color: #000;
+  border: 1px solid #000;
+  border-radius: 4px;
+  max-width: 10%;
+  padding: 12px;
+  margin: 5px auto;
 }

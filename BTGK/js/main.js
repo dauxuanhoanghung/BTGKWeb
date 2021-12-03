@@ -1,3 +1,4 @@
+
 $(document).ready(function(){
     //GOTOTOP
     $(window).scroll(function(){
@@ -50,21 +51,23 @@ $(document).ready(function(){
 		const window_bottom_position = window_top_position + plusHeight;
 		
 		//article
-		var article_top_position = $('.home-news').offset().top
-		$(leftFadeIn).each(function() {
-			if (article_top_position <= window_bottom_position) {
-				$(this).addClass('leftFadeIn');
-			} else {
-				$(this).removeClass('leftFadeIn');
-			}
-		})
-		$(rightFadeIn).each(function() {
-			if (article_top_position <= window_bottom_position) {
-				$(this).addClass('rightFadeIn');
-			} else {
-				$(this).removeClass('rightFadeIn');
-			}
-		})		
+        if($('.home-news').length != 0) {
+            var article_top_position = $('.home-news').offset().top;
+            $(leftFadeIn).each(function() {
+                if (article_top_position <= window_bottom_position) {
+                    $(this).addClass('leftFadeIn');
+                } else {
+                    $(this).removeClass('leftFadeIn');
+                }
+            })
+            $(rightFadeIn).each(function() {
+                if (article_top_position <= window_bottom_position) {
+                    $(this).addClass('rightFadeIn');
+                } else {
+                    $(this).removeClass('rightFadeIn');
+                }
+            })
+        }
 	})
 
     $(".bttop").click(function(){
@@ -100,9 +103,108 @@ $(document).ready(function(){
         if(minute < 10) minute = '0' + minute;
         if(second < 10) second = '0' + second;
         if(document.getElementById("hour") === null) clearInterval(remainingTime);
-        document.getElementById("hour").innerText = `${hour}h`;
-        document.getElementById("minute").innerText = `${minute}m`;
-        document.getElementById("second").innerText = `${second}s`;
+        else {
+            document.getElementById("hour").innerText = `${hour}h`;
+            document.getElementById("minute").innerText = `${minute}m`;
+            document.getElementById("second").innerText = `${second}s`;
+        }
         if(distance == 0) clearInterval(remainingTime);
     }, 1000)
+
+    /* */
+    $('input.search-field').on('input', function(){
+        var searchContent = $(this).val();
+        $('ul.s-item-list').html("")
+        var section = $('section:not(:first-child) ul.products');
+        $.each(section, function(){
+            $.each($(this).children(), function(){ //li
+                var name = $(this).children('div');
+                var price = name.children('h4').text();
+                name = name.children('a');
+                name = name.children().text()
+                if(name.toString().toLowerCase().includes(searchContent.toString().toLowerCase())){
+                    var src = $(this).children('figure').children('a').children('img').attr("src");
+                    $('ul.s-item-list').append(`
+                        <li class="s-item">
+                            <a href="product.html">
+                                <img src="${src}"/>
+                                <h6 class="s-name">${name}</h6>
+                                <h6 class="s-price">${price}</h6>
+                            </a>
+                        </li>
+                    `)
+                }
+            })
+        })
+        if(searchContent == "") $('ul.s-item-list').html("");
+    })
+
+
+    /* */
+
+    $('div.item .thumb img').on('click', function() {
+        var srcImg = $(this).attr('src');
+        $(this).parent().addClass('active').siblings().removeClass('active');
+        $('.imgMain img').attr('src', srcImg);
+    })
+
+    $('.attribute-list.storage .attribute-item').on('click', function(){
+        $(this).addClass('active').siblings().removeClass('active');
+        var price = $(this).attr('price');
+        price = getPriceString(price);
+        $(this).parent().parent().children().eq(1).children('.priceItem').text(price);
+    })
+
+    function getPriceString(price) {
+        price = price.toString();
+        return price.substring(0, price.length -6) + "." + price.substring(price.length - 6, price.length - 3)+ "." + price.substring(price.length - 3, price.length) + "Đ";
+    }
+
+    $('.attribute-list .dec').click(function() {
+        var quantity = $(this).siblings('input').val();
+        quantity = parseInt(quantity, 10);
+        quantity--;
+        $(this).siblings('input').val(updateQuantity(quantity));
+    })
+    $('.attribute-list .inc').click(function() {
+        var quantity = $(this).siblings('input').val();
+        quantity = parseInt(quantity, 10);
+        quantity++;
+        $(this).siblings('input').val(updateQuantity(quantity));
+    })
+    $('.attribute-list .quantity').on('change',function(){
+        quantity = parseInt($(this).val())
+        $(this).val(updateQuantity(quantity));
+    })
+    function updateQuantity(quantity) {
+        quantity = parseInt(quantity, 10);
+        if(quantity <= 0) return 1;
+        if(quantity > 100) return 100;
+        return quantity;
+    }
+
+    var postArea = $('.postArea');
+    $('.post-comment').on('click', function(){
+        var cmt = $(this).siblings().eq(0).val();
+        if(cmt.trim() != "") {
+            var d = new Date();
+            h = d.getHours() > 9 ? d.getHours() : "0" + d.getHours();
+            m = d.getMinutes() > 9 ? d.getMinutes() : "0" + d.getMinutes();
+            s = d.getSeconds() > 9 ? d.getSeconds() : "0" + d.getSeconds();
+            postArea.append(`<div class="comment">${cmt}<span class="date">at ${d.getHours()}:${m}:${d.getSeconds()}</span></div>`)
+            $('.postArea').css({
+                "display": "block"
+            });
+            $(this).siblings().eq(0).val("");
+        }
+    })
+    $('button.order').click(function(){
+        var address = $('input.address').val();
+        if(address.trim() != ""){
+            $('div.thanks').css({
+                "animation": "scale",
+                "display": "block"
+            })
+        }
+    })
 })
